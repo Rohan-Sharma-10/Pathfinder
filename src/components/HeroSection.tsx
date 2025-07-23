@@ -5,13 +5,8 @@ import heroImage from "@/assets/hero-bg.jpg";
 const HeroSection = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
-      </div>
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-hero"></div>
       
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
