@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-bg-clean.jpg";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -46,6 +49,7 @@ const HeroSection = () => {
               variant="hero" 
               size="xl"
               className="group animate-slide-in-right"
+              onClick={() => navigate("/Signup")}
             >
               Start Your Journey
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -55,6 +59,7 @@ const HeroSection = () => {
               variant="explore" 
               size="xl"
               className="animate-slide-in-right delay-200"
+              onClick={() => navigate("/fields")}
             >
               Explore Courses
             </Button>

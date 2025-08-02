@@ -2,23 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
-  :root {
-    /* Base colors */
+  /* Landing theme variables */
+  .landing-theme {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* Brand colors - Professional blue to teal gradient theme */
     --primary: 200 100% 50%;
     --primary-foreground: 0 0% 100%;
     --primary-glow: 180 100% 60%;
@@ -28,24 +22,20 @@ All colors MUST be HSL.
 
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 258 90% 66%;
 
-    /* Design system gradients */
     --gradient-hero: linear-gradient(135deg, hsl(220, 30%, 15%) 0%, hsl(240, 40%, 20%) 50%, hsl(260, 50%, 25%) 100%);
     --gradient-secondary: linear-gradient(135deg, hsl(200, 100%, 85%) 0%, hsl(180, 100%, 88%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(15, 100%, 60%) 0%, hsl(25, 100%, 65%) 50%, hsl(35, 100%, 70%) 100%);
     --gradient-card: linear-gradient(135deg, hsl(200, 50%, 98%) 0%, hsl(180, 30%, 96%) 100%);
-    
-    /* Shadows */
+
     --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
     --shadow-card: 0 10px 30px -10px hsl(var(--primary) / 0.1);
     --shadow-button: 0 4px 15px hsl(var(--primary) / 0.2);
@@ -53,47 +43,34 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
+  .landing-theme.dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
@@ -106,6 +83,177 @@ All colors MUST be HSL.
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  .landing-theme * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .landing-theme .auth-gradient {
+    background: linear-gradient(135deg, hsl(var(--auth-gradient-start)), hsl(var(--auth-gradient-end)));
+  }
+
+  .landing-theme .auth-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  .landing-theme .auth-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .landing-theme .dark-blue-gradient {
+    background: linear-gradient(135deg, hsl(220, 60%, 26%), hsl(230, 71%, 31%));
+  }
+
+  .landing-theme .deep-blue-bg {
+    background: linear-gradient(180deg, hsl(220, 60%, 8%), hsl(220, 50%, 12%));
+  }
+
+  .landing-theme .gradient-primary {
+    background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
+  }
+
+  .landing-theme .gradient-card {
+    background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--muted)));
+  }
+
+  .landing-theme .gradient-blue-deep {
+    background: linear-gradient(135deg, hsl(220, 70%, 15%), hsl(210, 65%, 25%));
+  }
+
+  .landing-theme .gradient-blue-glow {
+    background: linear-gradient(45deg, hsl(220, 80%, 20%), hsl(230, 70%, 30%), hsl(210, 75%, 25%));
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+  }
+
+  .landing-theme .gradient-overlay {
+    background: linear-gradient(135deg, hsl(220, 60%, 8%) 0%, hsl(230, 70%, 12%) 50%, hsl(210, 65%, 10%) 100%);
+  }
+
+  .landing-theme .gradient-border {
+    background: linear-gradient(90deg, hsl(220, 70%, 25%), hsl(230, 80%, 35%), hsl(210, 75%, 30%));
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
+@layer base {
+  :root {
+    /* Dark blue gradient background theme */
+    --background: 220 60% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 45% 12%;
+    --card-foreground: 0 0% 90%;
+
+    --popover: 220 45% 15%;
+    --popover-foreground: 0 0% 90%;
+
+    /* Deep blue primary with dark navy accent */
+    --primary: 230 71% 31%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 40% 20%;
+    --secondary-foreground: 0 0% 85%;
+
+    --muted: 220 35% 18%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 210 65% 35%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Dark blue gradient theme colors */
+    --auth-gradient-start: 220 60% 26%;
+    --auth-gradient-end: 230 71% 31%;
+    --auth-background: 220 60% 8%;
+    --auth-card: 220 45% 15%;
+    --auth-border: 220 35% 25%;
+
+    --border: 220 35% 25%;
+    --input: 220 35% 20%;
+    --ring: 210 65% 50%;
+
+    --radius: 0.5rem;
+
+    /* Dark blue sidebar theme */
+    --sidebar-background: 220 50% 10%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 230 71% 31%;
+    --sidebar-primary-foreground: 0 0% 95%;
+    --sidebar-accent: 220 40% 18%;
+    --sidebar-accent-foreground: 0 0% 85%;
+    --sidebar-border: 220 35% 22%;
+    --sidebar-ring: 210 65% 50%;
+  }
+
+  .dark {
+    /* Enhanced dark blue theme for dark mode */
+    --background: 220 70% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 55% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 50% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 210 65% 45%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 45% 15%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 220 40% 12%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 230 71% 40%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Enhanced dark gradients for dark mode */
+    --auth-gradient-start: 220 70% 20%;
+    --auth-gradient-end: 230 75% 25%;
+    --auth-background: 220 70% 5%;
+    --auth-card: 220 50% 10%;
+    --auth-border: 220 40% 20%;
+
+    --border: 220 40% 20%;
+    --input: 220 40% 15%;
+    --ring: 210 70% 55%;
+    
+    /* Enhanced dark blue sidebar */
+    --sidebar-background: 220 60% 6%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 210 65% 45%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 45% 12%;
+    --sidebar-accent-foreground: 0 0% 88%;
+    --sidebar-border: 220 40% 18%;
+    --sidebar-ring: 210 70% 55%;
+  }
 }
 
 @layer base {
@@ -115,5 +263,69 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Dark blue gradient theme animations */
+  .auth-gradient {
+    background: linear-gradient(135deg, hsl(var(--auth-gradient-start)), hsl(var(--auth-gradient-end)));
+  }
+
+  .dark-blue-gradient {
+    background: linear-gradient(135deg, hsl(220, 60%, 26%), hsl(230, 71%, 31%));
+  }
+
+  .deep-blue-bg {
+    background: linear-gradient(180deg, hsl(220, 60%, 8%), hsl(220, 50%, 12%));
+  }
+
+  .auth-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .auth-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Enhanced gradient utilities */
+  .gradient-primary {
+    background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
+  }
+
+  .gradient-card {
+    background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--muted)));
+  }
+
+  .gradient-blue-deep {
+    background: linear-gradient(135deg, hsl(220, 70%, 15%), hsl(210, 65%, 25%));
+  }
+
+  .gradient-blue-glow {
+    background: linear-gradient(45deg, hsl(220, 80%, 20%), hsl(230, 70%, 30%), hsl(210, 75%, 25%));
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(135deg, hsl(220, 60%, 8%) 0%, hsl(230, 70%, 12%) 50%, hsl(210, 65%, 10%) 100%);
+  }
+
+  .gradient-border {
+    background: linear-gradient(90deg, hsl(220, 70%, 25%), hsl(230, 80%, 35%), hsl(210, 75%, 30%));
+  }
+
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
 }

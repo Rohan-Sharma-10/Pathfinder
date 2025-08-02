@@ -40,8 +40,6 @@ const Footer = () => {
               <li><a href="#" className="text-background/80 hover:text-background transition-colors">About Us</a></li>
               <li><a href="#" className="text-background/80 hover:text-background transition-colors">Course Catalog</a></li>
               <li><a href="#" className="text-background/80 hover:text-background transition-colors">Career Counseling</a></li>
-              <li><a href="#" className="text-background/80 hover:text-background transition-colors">Success Stories</a></li>
-              <li><a href="#" className="text-background/80 hover:text-background transition-colors">Blog</a></li>
             </ul>
           </div>
 
