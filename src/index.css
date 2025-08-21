@@ -329,3 +329,218 @@
     50% { background-position: 100% 50%; }
   }
 }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Light blue gradient theme animations */
+  .auth-gradient {
+    background: linear-gradient(135deg, hsl(var(--auth-gradient-start)), hsl(var(--auth-gradient-end)));
+  }
+
+  .dark-blue-gradient {
+    background: linear-gradient(135deg, hsl(210, 45%, 85%), hsl(220, 50%, 90%));
+  }
+
+  .deep-blue-bg {
+    background: linear-gradient(180deg, hsl(210, 30%, 96%), hsl(220, 25%, 92%));
+  }
+
+  .auth-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.15), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .auth-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Enhanced light gradient utilities */
+  .gradient-primary {
+    background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
+  }
+
+  .gradient-card {
+    background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--muted)));
+  }
+
+  .gradient-blue-deep {
+    background: linear-gradient(135deg, hsl(210, 40%, 88%), hsl(220, 35%, 92%));
+  }
+
+  .gradient-blue-glow {
+    background: linear-gradient(45deg, hsl(210, 50%, 85%), hsl(220, 45%, 90%), hsl(200, 40%, 88%));
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(135deg, hsl(210, 25%, 95%) 0%, hsl(220, 30%, 92%) 50%, hsl(200, 25%, 94%) 100%);
+  }
+
+  .gradient-border {
+    background: linear-gradient(90deg, hsl(210, 60%, 70%), hsl(220, 65%, 75%), hsl(200, 60%, 72%));
+  }
+
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Additional light theme utilities for pathfinding visualization */
+  .grid-light {
+    background: linear-gradient(135deg, hsl(210, 20%, 98%), hsl(220, 15%, 96%));
+    border: 1px solid hsl(210, 25%, 90%);
+  }
+
+  .node-wall-light {
+    background: linear-gradient(135deg, hsl(210, 15%, 75%), hsl(220, 20%, 70%));
+    border: 1px solid hsl(210, 25%, 65%);
+  }
+
+  .node-start-light {
+    background: linear-gradient(135deg, hsl(120, 60%, 75%), hsl(130, 55%, 80%));
+    border: 2px solid hsl(120, 70%, 60%);
+    box-shadow: 0 0 10px hsla(120, 60%, 50%, 0.3);
+  }
+
+  .node-end-light {
+    background: linear-gradient(135deg, hsl(0, 60%, 75%), hsl(10, 55%, 80%));
+    border: 2px solid hsl(0, 70%, 60%);
+    box-shadow: 0 0 10px hsla(0, 60%, 50%, 0.3);
+  }
+
+  .node-visited-light {
+    background: linear-gradient(135deg, hsl(210, 50%, 80%), hsl(220, 45%, 85%));
+    border: 1px solid hsl(210, 60%, 70%);
+    animation: visitedNodeLight 1.5s ease-out;
+  }
+
+  .node-path-light {
+    background: linear-gradient(135deg, hsl(45, 90%, 70%), hsl(50, 85%, 75%));
+    border: 1px solid hsl(45, 95%, 60%);
+    animation: pathNodeLight 0.6s ease-out;
+    box-shadow: 0 0 8px hsla(45, 80%, 50%, 0.4);
+  }
+
+  @keyframes visitedNodeLight {
+    0% {
+      transform: scale(0.3);
+      background: linear-gradient(135deg, hsl(210, 70%, 85%), hsl(220, 65%, 90%));
+      border-radius: 100%;
+    }
+    50% {
+      background: linear-gradient(135deg, hsl(210, 60%, 82%), hsl(220, 55%, 87%));
+    }
+    75% {
+      transform: scale(1.2);
+      background: linear-gradient(135deg, hsl(210, 55%, 80%), hsl(220, 50%, 85%));
+    }
+    100% {
+      transform: scale(1);
+      background: linear-gradient(135deg, hsl(210, 50%, 80%), hsl(220, 45%, 85%));
+    }
+  }
+
+  @keyframes pathNodeLight {
+    0% {
+      transform: scale(0.6);
+      background: linear-gradient(135deg, hsl(45, 100%, 75%), hsl(50, 95%, 80%));
+    }
+    50% {
+      transform: scale(1.2);
+      background: linear-gradient(135deg, hsl(45, 95%, 72%), hsl(50, 90%, 77%));
+    }
+    100% {
+      transform: scale(1);
+      background: linear-gradient(135deg, hsl(45, 90%, 70%), hsl(50, 85%, 75%));
+    }
+  }
+
+  /* Control panel and button styles for light theme */
+  .control-panel-light {
+    background: linear-gradient(135deg, hsl(210, 25%, 97%), hsl(220, 20%, 94%));
+    border: 1px solid hsl(210, 30%, 88%);
+    box-shadow: 0 4px 12px hsla(210, 25%, 50%, 0.1);
+  }
+
+  .button-primary-light {
+    background: linear-gradient(135deg, hsl(210, 70%, 65%), hsl(220, 75%, 70%));
+    border: 1px solid hsl(210, 80%, 55%);
+    color: white;
+    transition: all 0.2s ease;
+  }
+
+  .button-primary-light:hover {
+    background: linear-gradient(135deg, hsl(210, 75%, 60%), hsl(220, 80%, 65%));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px hsla(210, 70%, 50%, 0.25);
+  }
+
+  .button-secondary-light {
+    background: linear-gradient(135deg, hsl(210, 20%, 90%), hsl(220, 15%, 93%));
+    border: 1px solid hsl(210, 30%, 80%);
+    color: hsl(210, 50%, 30%);
+    transition: all 0.2s ease;
+  }
+
+  .button-secondary-light:hover {
+    background: linear-gradient(135deg, hsl(210, 25%, 87%), hsl(220, 20%, 90%));
+    border-color: hsl(210, 40%, 70%);
+    transform: translateY(-1px);
+  }
+
+  /* Text and typography for light theme */
+  .text-primary-light {
+    color: hsl(210, 50%, 25%);
+  }
+
+  .text-secondary-light {
+    color: hsl(210, 30%, 45%);
+  }
+
+  .text-muted-light {
+    color: hsl(210, 20%, 60%);
+  }
+
+  /* Algorithm info panel */
+  .info-panel-light {
+    background: linear-gradient(135deg, hsl(210, 30%, 96%), hsl(220, 25%, 93%));
+    border: 1px solid hsl(210, 35%, 85%);
+    border-left: 4px solid hsl(210, 70%, 65%);
+  }
+
+  /* Statistics display */
+  .stats-light {
+    background: linear-gradient(135deg, hsl(210, 25%, 95%), hsl(220, 20%, 92%));
+    border: 1px solid hsl(210, 30%, 87%);
+    color: hsl(210, 50%, 30%);
+  }
+
+  /* Speed control slider */
+  .slider-light {
+    background: hsl(210, 25%, 90%);
+  }
+
+  .slider-thumb-light {
+    background: linear-gradient(135deg, hsl(210, 70%, 65%), hsl(220, 75%, 70%));
+    border: 2px solid white;
+    box-shadow: 0 2px 6px hsla(210, 50%, 30%, 0.2);
+  }
+}

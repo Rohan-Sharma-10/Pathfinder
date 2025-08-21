@@ -14,7 +14,6 @@ import CommerceFinance from "./pages/Commerce&Finance";
 import ArtsDesign from "./pages/ArtsDesign";
 import LawJustice from "./pages/Law&Justice";
 import ManagementBusiness from "./pages/Management";
-import { Navbar } from "./components/Navbar";
 import MediaCommunication from "./pages/MediaCommunication";
 import SocialWorkPsychology from "./pages/SocialWork&Psychology";
 import InternationalRelations from "./pages/InternationalRelations";
@@ -29,7 +28,6 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
       <div className="min-h-screen bg-background">
-        <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/signup" element={<Signup />} />

@@ -48,10 +48,10 @@ export const SalaryChart: React.FC<SalaryChartProps> = ({ degree }) => {
         display: false,
       },
       tooltip: {
-        backgroundColor: 'hsl(var(--popover))',
+        backgroundColor: 'rgba(255, 255, 255, 0.1)',
         titleColor: 'hsl(var(--popover-foreground))',
         bodyColor: 'hsl(var(--popover-foreground))',
-        borderColor: 'hsl(var(--border))',
+        borderColor: '#FFFFFF',
         borderWidth: 1,
         callbacks: {
           label: function(context: any) {
@@ -63,18 +63,18 @@ export const SalaryChart: React.FC<SalaryChartProps> = ({ degree }) => {
     scales: {
       x: {
         grid: {
-          color: 'hsl(var(--border))',
+          color: 'rgba(255,255,255,0.2)',
         },
         ticks: {
-          color: 'hsl(var(--muted-foreground))',
+          color: '#FFFFFF',
         },
       },
       y: {
         grid: {
-          color: 'hsl(var(--border))',
+          color: 'rgba(255,255,255,0.2)',
         },
         ticks: {
-          color: 'hsl(var(--muted-foreground))',
+          color: '#FFFFFF',
           callback: function(value: any) {
             return formatSalary(value);
           },
@@ -89,11 +89,11 @@ export const SalaryChart: React.FC<SalaryChartProps> = ({ degree }) => {
       {
         label: 'Salary Progression',
         data: degree.salaryProgression.amounts,
-        borderColor: 'hsl(var(--primary))',
-        backgroundColor: 'hsl(var(--primary) / 0.1)',
+        borderColor: '#FFFFFF',
+        backgroundColor: 'rgba(255, 255, 255, 0.5)',
         tension: 0.4,
         fill: true,
-        pointBackgroundColor: 'hsl(var(--primary))',
+        pointBackgroundColor: '#FFFFFF',
         pointBorderColor: 'hsl(var(--background))',
         pointBorderWidth: 2,
         pointRadius: 6,
